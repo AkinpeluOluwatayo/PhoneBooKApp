@@ -8,11 +8,11 @@ class PhoneBook {
 
     addContact(name:string, phoneNumber:number):string{
         if(!/^[A-Za-z]+$/.test(name)){
-            throw new Error ("Conatact name should be in alphabets");
+            throw new PhoneBookException ("Conatact name should be in alphabets");
         }
         const phoneToString = phoneNumber.toString();
         if(!/^[0-9]{11}$/.test(phoneToString)){             // i am validating nd making sure its doesnt pass 11 number
-            throw new Error ("Phone number should be in digits and 11 numbers");
+            throw new PhoneBookException ("Phone number should be in digits and 11 numbers");
         }
 
         this.contact.push(new Contact(name, phoneNumber))  // i am creating new instance passing d prameter nd pushing
