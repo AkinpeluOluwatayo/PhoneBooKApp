@@ -1,3 +1,5 @@
+
+
 import { Contact } from "./Contact";
 import { PhoneBookInterface } from "./PhoneBookInterface";
 
@@ -29,3 +31,9 @@ class User  implements PhoneBookInterface {
         return this.contacts;
     }
 }
+const user = new User("Tayo", "1234");
+console.log (user.addContact("Tosin",123456789));
+console.log(user.addContact("Segun", 12345678));
+console.log(user.showAllContact());
+console.log(user.removeContact("Tosin",123456789 ));
+
