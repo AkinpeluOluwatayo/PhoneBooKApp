@@ -1,6 +1,6 @@
-export class Contact{
-    name:string;
-    phoneNumber:number;
+ export class Contact{
+    public name:string;
+    public phoneNumber:number;
 
     constructor(name:string, phoneNumber:number) {
         this.name = name;
@@ -23,7 +23,7 @@ export class Contact{
         this.phoneNumber = value;
     }
 
-    displayContact():string{
+     displayContact():string{
         return `Name: ${this.getName()} PhoneNumber: ${this.getPhoneNumber()}`;
     }
 

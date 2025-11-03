@@ -1,10 +1,8 @@
 import {Contact} from "./Contact";
-
-class PhoneBook extends Contact{
+class PhoneBook {
     private contact:Contact[];
 
     constructor() {
-        super(name, phoneNumber);
         this.contact = []
     }
 
@@ -24,9 +22,23 @@ class PhoneBook extends Contact{
     }
 
     removeContact(name:string, phoneNumber:number):Contact[]{
-        this.contact = this.contact.filter(c => !(c.name === name && c.phoneNumber)); //
+        this.contact = this.contact.filter(c => !(
+            c.name === name && c.phoneNumber === phoneNumber)); // i am creating new object here of contact list a
+                                                                        //nd using filter to remove duplicate names
+             return this.contact;                                        //
 
     }
+
+    searchContact(name:string): Contact[]{
+        const searchedName:Contact[] = [];
+        for(let search of this.contact){
+            if(search.name === name){
+                searchedName.push(search);
+            }
+        }
+        return searchedName;
+    }
+
 
 
 }
