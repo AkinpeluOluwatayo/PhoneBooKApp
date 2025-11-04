@@ -3,7 +3,7 @@
 import { Contact } from "./Contact";
 import { PhoneBookInterface } from "./PhoneBookInterface";
 
-class User  implements PhoneBookInterface {
+export class User  implements PhoneBookInterface {
     private name: string;
     private password: string;
     private contacts: Contact[];  // store user’s contact list
@@ -17,7 +17,7 @@ class User  implements PhoneBookInterface {
    addContact(name: string, phoneNumber: number): string {
         const newContact = new Contact(name, phoneNumber);
         this.contacts.push(newContact);
-        return "Contact added successfully!";
+        return (`You have added ${name} contact successfully`);
     }
 
     removeContact(name: string, phoneNumber: number): Contact[] {
@@ -32,8 +32,9 @@ class User  implements PhoneBookInterface {
     }
 }
 const user = new User("Tayo", "1234");
-console.log (user.addContact("Tosin",123456789));
-console.log(user.addContact("Segun", 12345678));
+console.log (user.addContact("Tosin",81053861932));
+console.log(user.addContact("Segun", 70638952743));
+console.log(user.addContact("Femi", 90511709597));
 console.log(user.showAllContact());
-console.log(user.removeContact("Tosin",123456789 ));
+
 
